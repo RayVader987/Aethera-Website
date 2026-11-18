@@ -1,0 +1,215 @@
+.impact{
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+.impactHeading{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.impactHeading span{
+
+letter-spacing:4px;
+
+color:#7BE495;
+
+font-size:14px;
+
+}
+
+.impactHeading h2{
+
+margin-top:20px;
+
+font-size:60px;
+
+line-height:1.2;
+
+}
+
+.impactHeading p{
+
+margin-top:25px;
+
+font-size:18px;
+
+color:#bfbfbf;
+
+line-height:1.8;
+
+margin-bottom:70px;
+
+}
+
+/* ---------------- */
+
+.marqueeContainer{
+
+display:flex;
+
+flex-direction:column;
+
+gap:35px;
+
+position:relative;
+
+}
+
+/* fade edges */
+
+.marquee{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.marquee::before,
+
+.marquee::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+width:140px;
+
+height:100%;
+
+z-index:5;
+
+pointer-events:none;
+
+}
+
+.marquee::before{
+
+left:0;
+
+background:linear-gradient(to right,#050806,transparent);
+
+}
+
+.marquee::after{
+
+right:0;
+
+background:linear-gradient(to left,#050806,transparent);
+
+}
+
+/* moving row */
+
+.track{
+
+display:flex;
+
+gap:30px;
+
+width:fit-content;
+
+animation:marquee 22s linear infinite;
+
+will-change:transform;
+
+}
+
+/* pause row on hover */
+
+.marquee:hover .track{
+
+animation-play-state:paused;
+
+}
+
+/* cards */
+
+.impactCard{
+
+width:400px;
+
+flex-shrink:0;
+
+padding:40px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:28px;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-align:left;
+
+transition:.35s;
+
+backdrop-filter:blur(12px);
+
+}
+
+.impactCard:hover{
+
+transform:translateY(-10px) scale(1.05);
+
+border-color:#7BE495;
+
+background:rgba(123,228,149,.08);
+
+box-shadow:0 25px 70px rgba(123,228,149,.18);
+
+}
+
+.impactIcon{
+
+font-size:40px;
+
+color:#7BE495;
+
+margin-bottom:25px;
+
+}
+
+.impactCard h3{
+
+font-size:26px;
+
+margin-bottom:18px;
+
+}
+
+.impactCard p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#c4c4c4;
+
+}
+
+/* animations */
+
+@keyframes marquee{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(calc(-50% - 15px));
+
+}
+
+}
